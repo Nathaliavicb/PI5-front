@@ -1,0 +1,87 @@
+.lista-acoes-fav {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    padding: 0 8px;
+    background-color: rgb(107, 108, 108);
+    border-radius: 20px;
+}
+
+.acao {
+    margin: 20px 0;
+    font-size: 24px;
+    background-color: rgb(107, 108, 108);
+}
+
+.acao img {
+    border-radius: 8px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh; 
+    object-fit: contain; 
+    margin-top: 20px;
+}
+
+.acao h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 25px;
+    background-color: rgb(107, 108, 108);
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.acao p {
+    margin: 8px 0;
+    margin-left: 20px;
+    font-size: 18px;
+    white-space: pre-line;
+    color: #fff; 
+    background-color: rgb(107, 108, 108);
+}
+
+.acao strong {
+    margin-top: 15px;
+    font-size: 20px;
+    background-color: rgb(107, 108, 108);
+    color: #fff;
+}
+
+.areaBtnAcoes {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(107, 108, 108);
+}
+
+.btnSalvar{
+    margin: 8px;
+    font-size: 16px;
+    padding: 10px 14px;
+    background-color: brown;
+    color: aliceblue;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnVoltar {
+    margin: 8px;
+    font-size: 16px;
+    padding: 10px 14px;
+    background-color: rgb(5, 38, 101);
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .acoes img {
+        max-width: 70%; 
+        height: auto;
+        margin: 20px auto;
+    }
+}
