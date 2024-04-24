@@ -1,10 +1,4 @@
-# Filmes em Cartaz
-
-Projeto consiste no consumo de uma API de filmes, exibindo os filmes que estão em cartaz.
-
-Possui a página Home composta pelos filmes em cartaz e a página de Meus filmes, que você consegue deixa-los salvos.
-
-Ao clicar em um filme, você consegue visualizar as suas informações: visualizar trailer ou salvar na sua lista de filmes.
+# PI 5
 
 ## Para rodar o projeto, siga o tutorial abaixo.
 
@@ -12,7 +6,7 @@ Ao clicar em um filme, você consegue visualizar as suas informações: visualiz
 
 1. Clone este repositório
 ```bash
-git clone https://github.com/matheusmatosr/filme.git
+git clone https://github.com/matheusmatosr/PI5-front.git
 ```
 
 Abra o terminal e faça os seguintes códigos:
