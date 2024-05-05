@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './acoes.css';
 import acoesData from '../../dados/acoes.json';
-import { toast } from 'react-toastify';
 
 function Acoes(){
     const { id } = useParams();
@@ -20,13 +19,12 @@ function Acoes(){
         const hasAcao = acoesSalvas.some((acao) => acao.empresa === acaoSelecionada.empresa);
 
         if (hasAcao) {
-            toast.warn("Essa ação já está na sua lista!");
+            alert("Essa ação já está na sua lista!");
             return;
         }
 
         acoesSalvas.push(acaoSelecionada);
         localStorage.setItem("@matosflix", JSON.stringify(acoesSalvas));
-        toast.success("Ação salva com sucesso!");
     }
 
     return (
