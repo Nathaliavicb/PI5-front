@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './favoritos.css';
-import { toast } from 'react-toastify';
 
 function Favoritos(){
 
@@ -16,7 +15,6 @@ function Favoritos(){
         const novaLista = acoesSalvas.filter((_, i) => i !== index);
         setAcoesSalvas(novaLista);
         localStorage.setItem("@matosflix", JSON.stringify(novaLista));
-        toast.success("Ação removida com sucesso!");
     }
 
     return(
