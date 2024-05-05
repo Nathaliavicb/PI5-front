@@ -9,20 +9,34 @@
     border-radius: 20px;
 }
 
+.chart {
+    margin-top: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.table-container {
+    overflow-x: auto;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.acoes-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.acoes-table th,
+.acoes-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
 .acao {
     margin: 20px 0;
     font-size: 24px;
     background-color: rgb(107, 108, 108);
-}
-
-.acao img {
-    border-radius: 8px;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 50vh; 
-    object-fit: contain; 
-    margin-top: 20px;
 }
 
 .acao h3 {
@@ -40,7 +54,7 @@
     margin-left: 20px;
     font-size: 18px;
     white-space: pre-line;
-    color: #fff; 
+    color: #fff;
     background-color: rgb(107, 108, 108);
 }
 
@@ -57,7 +71,7 @@
     background-color: rgb(107, 108, 108);
 }
 
-.btnSalvar{
+.btnSalvar {
     margin: 8px;
     font-size: 16px;
     padding: 10px 14px;
@@ -80,7 +94,7 @@
 
 @media screen and (min-width: 768px) {
     .acoes img {
-        max-width: 70%; 
+        max-width: 70%;
         height: auto;
         margin: 20px auto;
     }
