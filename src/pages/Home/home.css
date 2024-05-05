@@ -115,6 +115,10 @@
     text-decoration: none;
 }
 
+.container-footer {
+    margin-top: 35px;
+}
+
 @media screen and (max-width: 768px) {
     .intro {
         flex-direction: column; 
