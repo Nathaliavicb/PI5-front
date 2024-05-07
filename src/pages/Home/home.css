@@ -110,9 +110,13 @@
     padding: 8px 16px;
     background-color: #007bff;
     color: #fff;
-    border: none;
+    border: 1px solid #fff;
     border-radius: 4px;
     text-decoration: none;
+}
+
+.botao-acompanhar:hover {
+    background-color: #0351a5;
 }
 
 .container-footer {

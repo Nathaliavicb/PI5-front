@@ -5,6 +5,7 @@ import acoesData from '../../dados/acoes.json';
 import { Line } from 'react-chartjs-2';
 import { useTable } from 'react-table';
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title } from 'chart.js';
+import Footer from '../../componentss/Footer';
 
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
 
@@ -83,18 +84,13 @@ function Acoes() {
                     <div className="acao">
                         {selectedAcao && (
                             <>
-                                <h3>{selectedAcao.empresa}</h3>
-                                <p><strong>Descrição:</strong> {selectedAcao.descricao}</p>
-                                <p><strong>Setor:</strong> {selectedAcao.setor}</p>
-                                <p><strong>Fundação:</strong> {selectedAcao.fundacao}</p>
-                                <p><strong>Preço Atual:</strong> R${selectedAcao.preco_atual}</p>
-                                <p><strong>Variação:</strong> {selectedAcao.variacao}</p>
-                                <p><strong>Volume Negociado:</strong> {selectedAcao.volume_negociado}</p>
-                                <p><strong>Última Atualização:</strong> {selectedAcao.ultima_atualizacao}</p>
-                                <div className="areaBtnAcoes">
-                                    <button onClick={salvarAcao} className="btnSalvar">Salvar</button>
-                                    <Link className="btnVoltar" to={`/`}>Voltar</Link>
+                                <div className='container-info-acoes'>                
+                                    <h3>{selectedAcao.empresa}</h3>
+                                    <p><strong>Descrição:</strong> {selectedAcao.descricao}</p>
+                                    <p><strong>Fundação:</strong> {selectedAcao.fundacao}</p>
+                                    <p><strong>Setor:</strong> {selectedAcao.setor}</p>
                                 </div>
+                
                             </>
                         )}
                     </div>
@@ -126,7 +122,14 @@ function Acoes() {
                             </tbody>
                         </table>
                     </div>
+                    <div className="areaBtnAcoes">
+                        <button onClick={salvarAcao} className="btnSalvar">Salvar</button>
+                        <Link className="btnVoltar" to={`/`}>Voltar</Link>
+                    </div>
                 </div>
+            </div>
+            <div>
+                <Footer />
             </div>
         </>
     );
