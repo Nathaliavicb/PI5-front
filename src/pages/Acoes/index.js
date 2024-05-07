@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './acoes.css';
-import acoesData from '../../dados/acoes.json';
+import acoesData from '../../database/acoes.json';
 import { Line } from 'react-chartjs-2';
 import { useTable } from 'react-table';
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title } from 'chart.js';
