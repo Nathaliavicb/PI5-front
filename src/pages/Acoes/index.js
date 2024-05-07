@@ -75,6 +75,8 @@ function Acoes() {
 
         acoesSalvas.push(selectedAcao);
         localStorage.setItem("@matosflix", JSON.stringify(acoesSalvas));
+
+        alert("Ação salva com sucesso!");
     }
 
     return (
