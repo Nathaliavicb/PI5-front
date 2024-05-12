@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './favoritos.css';
+import RetrospectivaAcoes from '../../componentss/Graph/RetrospectivaAcoes';
 
 function Favoritos(){
 
@@ -36,6 +37,8 @@ function Favoritos(){
                 ))}
             </ul>
             <Link className='buttonEscolher' to="/">Escolher</Link>
+
+            {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.empresa)} className="graficoRetro" />}
         </div>
     )
 }
