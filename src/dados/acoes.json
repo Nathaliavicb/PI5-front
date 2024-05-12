@@ -7,7 +7,12 @@
     "preco_atual": 150.50,
     "variacao": "+2.5%",
     "volume_negociado": "100.000",
-    "ultima_atualizacao": "18/04/2024"
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 155.00},
+      {"data": "02/05/2024", "preco": 160.00},
+      {"data": "03/05/2024", "preco": 165.00}
+    ]
   },
   {
     "empresa": "Empresa B",
@@ -17,7 +22,12 @@
     "preco_atual": 75.20,
     "variacao": "-1.8%",
     "volume_negociado": "75.000",
-    "ultima_atualizacao": "18/04/2024"
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 73.00},
+      {"data": "02/05/2024", "preco": 74.50},
+      {"data": "03/05/2024", "preco": 72.80}
+    ]
   },
   {
     "empresa": "Empresa C",
@@ -27,6 +37,11 @@
     "preco_atual": 150.50,
     "variacao": "+2.5%",
     "volume_negociado": "100.000",
-    "ultima_atualizacao": "18/04/2024"
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 149.00},
+      {"data": "02/05/2024", "preco": 152.00},
+      {"data": "03/05/2024", "preco": 155.50}
+    ]
   }
 ]

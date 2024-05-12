@@ -4,10 +4,10 @@ import './acoes.css';
 import acoesData from '../../dados/acoes.json';
 import { Line } from 'react-chartjs-2';
 import { useTable } from 'react-table';
-import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title } from 'chart.js';
+import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend } from 'chart.js';
 import Footer from '../../componentss/Footer';
 
-Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title);
+Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Legend);
 
 function Acoes() {
     const { id } = useParams();
@@ -19,17 +19,53 @@ function Acoes() {
         setSelectedAcao(acaoSelecionada);
     }, [id]);
 
+    const labels = selectedAcao ? selectedAcao.historico.map(item => item.data) : [];
+    const precoAtualData = selectedAcao ? selectedAcao.historico.map(item => item.preco) : [];
+
     const data = {
-        labels: selectedAcao ? [selectedAcao.empresa] : [],
+        labels: labels,
         datasets: [
             {
                 label: 'Preço Atual',
-                data: selectedAcao ? [selectedAcao.preco_atual] : [],
+                data: precoAtualData,
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1,
             },
         ],
+    };
+
+    const options = {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Data',
+                    color: 'black',
+                    font: {
+                        weight: 'bold',
+                        size: 16
+                    }
+                },
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Preço (R$)',
+                    color: 'black',
+                    font: {
+                        weight: 'bold',
+                        size: 16
+                    }
+                },
+            }
+        },
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top'
+            }
+        }
     };
 
     const columns = React.useMemo(
@@ -97,7 +133,7 @@ function Acoes() {
                         )}
                     </div>
                     <div className='chart'>
-                        {selectedAcao && <Line data={data} />}
+                        {selectedAcao && <Line data={data} options={options} />}
                     </div>
                     <div className='table-container'>
                         <table {...getTableProps()} className='acoes-table'>
