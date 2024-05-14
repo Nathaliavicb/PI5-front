@@ -75,10 +75,6 @@
     align-items: center;
 }
 
-.title-grafico {
-    display: flex;
-}
-
 .graficoRetro {
     width: 550px;
     height: 550px;
