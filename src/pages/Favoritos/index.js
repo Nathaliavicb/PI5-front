@@ -38,7 +38,13 @@ function Favoritos(){
             </ul>
             <Link className='buttonEscolher' to="/">Escolher</Link>
 
-            {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.empresa)} className="graficoRetro" />}
+            <div className='container-grafico'>
+                <h3 className="title-grafico">Gráfico Comparativo</h3>
+                <div className="graficoRetro">
+                    {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.empresa)} />}
+                </div>
+            </div>
+        
         </div>
     )
 }
