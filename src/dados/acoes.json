@@ -4,7 +4,7 @@
     "descricao": "Descrição da Empresa A",
     "setor": "Tecnologia",
     "fundacao": "01/01/2000",
-    "preco_atual": 150.50,
+    "preco_atual": 190,
     "variacao": "+2.5%",
     "volume_negociado": "100.000",
     "ultima_atualizacao": "18/04/2024",
@@ -34,9 +34,54 @@
     "descricao": "Descrição da Empresa C",
     "setor": "Lazer",
     "fundacao": "01/01/2000",
-    "preco_atual": 150.50,
+    "preco_atual": 120,
     "variacao": "+2.5%",
-    "volume_negociado": "100.000",
+    "volume_negociado": "85.000",
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 149.00},
+      {"data": "02/05/2024", "preco": 152.00},
+      {"data": "03/05/2024", "preco": 155.50}
+    ]
+  },
+  {
+    "empresa": "Empresa D",
+    "descricao": "Descrição da Empresa D",
+    "setor": "Lazer",
+    "fundacao": "01/01/2000",
+    "preco_atual": 130,
+    "variacao": "+2.5%",
+    "volume_negociado": "65.000",
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 149.00},
+      {"data": "02/05/2024", "preco": 152.00},
+      {"data": "03/05/2024", "preco": 155.50}
+    ]
+  },
+  {
+    "empresa": "Empresa E",
+    "descricao": "Descrição da Empresa E",
+    "setor": "Lazer",
+    "fundacao": "01/01/2000",
+    "preco_atual": 170.50,
+    "variacao": "+2.5%",
+    "volume_negociado": "90.000",
+    "ultima_atualizacao": "18/04/2024",
+    "historico": [
+      {"data": "01/05/2024", "preco": 149.00},
+      {"data": "02/05/2024", "preco": 152.00},
+      {"data": "03/05/2024", "preco": 155.50}
+    ]
+  },
+  {
+    "empresa": "Empresa F",
+    "descricao": "Descrição da Empresa F",
+    "setor": "Lazer",
+    "fundacao": "01/01/2000",
+    "preco_atual": 91.50,
+    "variacao": "+2.5%",
+    "volume_negociado": "90.000",
     "ultima_atualizacao": "18/04/2024",
     "historico": [
       {"data": "01/05/2024", "preco": 149.00},
