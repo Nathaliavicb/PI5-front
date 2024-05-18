@@ -170,4 +170,8 @@
     .botao-acompanhar {
         padding: 6px 12px;
     }
+
+    .container-acao-item {
+        margin-left: 5px;
+    }
 }
