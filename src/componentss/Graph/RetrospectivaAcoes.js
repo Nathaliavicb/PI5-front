@@ -1,4 +1,4 @@
-import acoes from '../../dados/acoes.json';
+import acoesData from '../../dados/acoes.json';
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
@@ -7,14 +7,23 @@ function RetrospectivaAcoes({ acoesSalvas }) {
 
     useEffect(() => {
         // Filtrar os dados das ações apenas para as empresas selecionadas
-        const acoesSelecionadas = acoes.filter(acao => acoesSalvas.includes(acao.empresa));
-        const labels = acoesSelecionadas.map(acao => acao.empresa);
+        const acoesSelecionadas = [];
+
+        acoesData.historicoAcoes.forEach(historico => {
+            historico.acoes.forEach(acao => {
+                if (acoesSalvas.includes(acao.acao)) {
+                    acoesSelecionadas.push(acao);
+                }
+            });
+        });
+
+        const labels = acoesSelecionadas.map(acao => acao.acao);
         const data = {
             labels: labels,
             datasets: [{
                 axis: 'y',
                 label: 'Valor das Ações',
-                data: acoesSelecionadas.map(acao => acao.preco_atual),
+                data: acoesSelecionadas.map(acao => acao.valorCota),
                 fill: false,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgb(255, 99, 132)',
@@ -51,9 +60,9 @@ function RetrospectivaAcoes({ acoesSalvas }) {
                     }
                 },
                 plugins: {
-                  legend: {
-                    display: false 
-                  }
+                    legend: {
+                        display: false 
+                    }
                 }
             }
         });

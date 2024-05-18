@@ -6,16 +6,15 @@ import intro from '../../assets/intro.jpg';
 import Footer from '../../componentss/Footer';
 
 function Home() {
-    const [acoes, setAcoes] = useState([]);
+    const [historicoAcoes, setHistoricoAcoes] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setAcoes(acoesData);
+        setHistoricoAcoes(acoesData.historicoAcoes);
         setLoading(false);
     }, []);
 
     const handleSaibaMaisClick = () => {
-        // Redirecionamento para a div lista-acoes
         const listaAcoes = document.querySelector('.lista-acoes');
         listaAcoes.scrollIntoView({ behavior: 'smooth' });
     };
@@ -42,13 +41,17 @@ function Home() {
                     </div>
                 </div>
                 <div className='lista-acoes'>
-                    {acoes.map((acao, index) => (
+                    {historicoAcoes.map((historico, index) => (
                         <div className="linha-acoes" key={index}>
-                            <div className="acao-item">
-                                <h3>{acao.empresa}</h3>
-                                <p>{acao.descricao}</p>
-                                <Link to={`/acao/${index}`} className="botao-acompanhar">Acompanhar</Link>
-                            </div>
+                            {historico.acoes.map((acao, acaoIndex) => (
+                                <div className="acao-item" key={acaoIndex}>
+                                    <h3>{acao.acao}</h3>
+                                    <p>Valor da Cota: {acao.valorCota}</p>
+                                    <p>Valor Total Investido: {acao.valorTotalInvestido}</p>
+                                    <p>Retorno Diário: {acao.retornoDiario}%</p>
+                                    <Link to={`/acao/${index}/${acaoIndex}`} className="botao-acompanhar">Acompanhar</Link>
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>
