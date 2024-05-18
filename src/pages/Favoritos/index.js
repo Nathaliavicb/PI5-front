@@ -5,7 +5,7 @@ import RetrospectivaAcoes from '../../componentss/Graph/RetrospectivaAcoes';
 
 function Favoritos(){
 
-    const [ acoesSalvas, setAcoesSalvas ] = useState([]);
+    const [acoesSalvas, setAcoesSalvas] = useState([]);
 
     useEffect(() => {
         const minhaLista = localStorage.getItem("@matosflix");
@@ -18,7 +18,7 @@ function Favoritos(){
         localStorage.setItem("@matosflix", JSON.stringify(novaLista));
     }
 
-    return(
+    return (
         <div className='meus-filmes'>
             <h1>Minhas Bolsas de Ações</h1>
             &nbsp;
@@ -28,7 +28,7 @@ function Favoritos(){
             <ul>
                 {acoesSalvas.map((acao, index) => (
                     <li key={index}>
-                        <span>{acao.empresa}</span>
+                        <span>{acao.acao}</span>
                         <div>
                             <Link to={`/acao/${index}`}>Detalhes</Link>
                             <button onClick={() => excluirAcao(index)} className="buttonExcluir">Excluir</button>
@@ -40,7 +40,7 @@ function Favoritos(){
 
             <div className='container-grafico'>
                 <div className="graficoRetro">
-                    {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.empresa)} />}
+                    {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.acao)} />}
                 </div>
             </div>
         

@@ -1,92 +1,64 @@
-[
-  {
-    "empresa": "Empresa A",
-    "descricao": "Descrição da Empresa A",
-    "setor": "Tecnologia",
-    "fundacao": "01/01/2000",
-    "preco_atual": 190,
-    "variacao": "+2.5%",
-    "volume_negociado": "100.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 155.00},
-      {"data": "02/05/2024", "preco": 160.00},
-      {"data": "03/05/2024", "preco": 165.00}
-    ]
-  },
-  {
-    "empresa": "Empresa B",
-    "descricao": "Descrição da Empresa B",
-    "setor": "Saúde",
-    "fundacao": "15/05/1995",
-    "preco_atual": 75.20,
-    "variacao": "-1.8%",
-    "volume_negociado": "75.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 73.00},
-      {"data": "02/05/2024", "preco": 74.50},
-      {"data": "03/05/2024", "preco": 72.80}
-    ]
-  },
-  {
-    "empresa": "Empresa C",
-    "descricao": "Descrição da Empresa C",
-    "setor": "Lazer",
-    "fundacao": "01/01/2000",
-    "preco_atual": 120,
-    "variacao": "+2.5%",
-    "volume_negociado": "85.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 149.00},
-      {"data": "02/05/2024", "preco": 152.00},
-      {"data": "03/05/2024", "preco": 155.50}
-    ]
-  },
-  {
-    "empresa": "Empresa D",
-    "descricao": "Descrição da Empresa D",
-    "setor": "Lazer",
-    "fundacao": "01/01/2000",
-    "preco_atual": 130,
-    "variacao": "+2.5%",
-    "volume_negociado": "65.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 149.00},
-      {"data": "02/05/2024", "preco": 152.00},
-      {"data": "03/05/2024", "preco": 155.50}
-    ]
-  },
-  {
-    "empresa": "Empresa E",
-    "descricao": "Descrição da Empresa E",
-    "setor": "Lazer",
-    "fundacao": "01/01/2000",
-    "preco_atual": 170.50,
-    "variacao": "+2.5%",
-    "volume_negociado": "90.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 149.00},
-      {"data": "02/05/2024", "preco": 152.00},
-      {"data": "03/05/2024", "preco": 155.50}
-    ]
-  },
-  {
-    "empresa": "Empresa F",
-    "descricao": "Descrição da Empresa F",
-    "setor": "Lazer",
-    "fundacao": "01/01/2000",
-    "preco_atual": 91.50,
-    "variacao": "+2.5%",
-    "volume_negociado": "90.000",
-    "ultima_atualizacao": "18/04/2024",
-    "historico": [
-      {"data": "01/05/2024", "preco": 149.00},
-      {"data": "02/05/2024", "preco": 152.00},
-      {"data": "03/05/2024", "preco": 155.50}
-    ]
-  }
-]
+{
+  "historicoAcoes": [
+    {
+      "data": "2024-04-15",
+      "valorCarteira": 6680,
+      "acoes": [
+        {
+          "acao": "DiamondBigger",
+          "valorCota": 120.99,
+          "valorTotalInvestido": 2500.00,
+          "retornoDiario": 0.25
+        }
+      ]
+    },
+    {
+      "data": "2024-02-05",
+      "valorCarteira": 1450,
+      "acoes": [
+        {
+          "acao": "Pousada LR",
+          "valorCota": 249.99,
+          "valorTotalInvestido": 1100.00,
+          "retornoDiario": 0.75
+        }
+      ]
+    },
+    {
+      "data": "2024-01-29",
+      "valorCarteira": 8750,
+      "acoes": [
+        {
+          "acao": "MVA",
+          "valorCota": 80.49,
+          "valorTotalInvestido": 350.00,
+          "retornoDiario": 0.10
+        }
+      ]
+    },
+    {
+      "data": "2024-03-10",
+      "valorCarteira": 2550,
+      "acoes": [
+        {
+          "acao": "SoundPlay",
+          "valorCota": 224.99,
+          "valorTotalInvestido": 4199.99,
+          "retornoDiario": 0.65
+        }
+      ]
+    },
+    {
+      "data": "2024-04-21",
+      "valorCarteira": 7500,
+      "acoes": [
+        {
+          "acao": "DiamondBigger",
+          "valorCota": 349.99,
+          "valorTotalInvestido": 5635.90,
+          "retornoDiario": 0.45
+        }
+      ]
+    }
+  ]
+}

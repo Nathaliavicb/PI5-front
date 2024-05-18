@@ -10,17 +10,18 @@ import Footer from '../../componentss/Footer';
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Legend);
 
 function Acoes() {
-    const { id } = useParams();
+    const { index, acaoIndex } = useParams();
     const [selectedAcao, setSelectedAcao] = useState(null);
 
     useEffect(() => {
-        const index = parseInt(id);
-        const acaoSelecionada = acoesData[index];
+        const acaoSelecionada = acoesData.historicoAcoes[parseInt(index)].acoes[parseInt(acaoIndex)];
         setSelectedAcao(acaoSelecionada);
-    }, [id]);
+    }, [index, acaoIndex]);
 
-    const labels = selectedAcao ? selectedAcao.historico.map(item => item.data) : [];
-    const precoAtualData = selectedAcao ? selectedAcao.historico.map(item => item.preco) : [];
+    const labels = acoesData.historicoAcoes.map(historico => historico.data);
+    const precoAtualData = acoesData.historicoAcoes.map(historico => 
+        historico.acoes.find(acao => acao.acao === selectedAcao?.acao)?.valorCota || null
+    ).filter(value => value !== null);
 
     const data = {
         labels: labels,
@@ -71,30 +72,29 @@ function Acoes() {
     const columns = React.useMemo(
         () => [
             {
-                Header: 'Empresa',
-                accessor: 'empresa',
+                Header: 'Ação',
+                accessor: 'acao',
             },
             {
-                Header: 'Preço Atual',
-                accessor: 'preco_atual',
+                Header: 'Valor Cota',
+                accessor: 'valorCota',
             },
             {
-                Header: 'Variação',
-                accessor: 'variacao',
+                Header: 'Valor Total Investido',
+                accessor: 'valorTotalInvestido',
             },
             {
-                Header: 'Volume Negociado',
-                accessor: 'volume_negociado',
-            },
-            {
-                Header: 'Última Atualização',
-                accessor: 'ultima_atualizacao',
+                Header: 'Retorno Diário',
+                accessor: 'retornoDiario',
             },
         ],
         []
     );
 
-    const tableInstance = useTable({ columns, data: selectedAcao ? [selectedAcao] : [] });
+    const tableData = acoesData.historicoAcoes.flatMap(historico => historico.acoes)
+        .filter(acao => acao.acao === selectedAcao?.acao);
+
+    const tableInstance = useTable({ columns, data: tableData });
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
@@ -102,7 +102,7 @@ function Acoes() {
         const minhaLista = localStorage.getItem("@matosflix");
         let acoesSalvas = JSON.parse(minhaLista) || [];
 
-        const hasAcao = acoesSalvas.some((acao) => acao.empresa === selectedAcao.empresa);
+        const hasAcao = acoesSalvas.some((acao) => acao.acao === selectedAcao.acao);
 
         if (hasAcao) {
             alert("Essa ação já está na sua lista!");
@@ -123,12 +123,11 @@ function Acoes() {
                         {selectedAcao && (
                             <>
                                 <div className='container-info-acoes'>                
-                                    <h3>{selectedAcao.empresa}</h3>
-                                    <p><strong>Descrição:</strong> {selectedAcao.descricao}</p>
-                                    <p><strong>Fundação:</strong> {selectedAcao.fundacao}</p>
-                                    <p><strong>Setor:</strong> {selectedAcao.setor}</p>
+                                    <h3>{selectedAcao.acao}</h3>
+                                    <p><strong>Valor Cota:</strong> {selectedAcao.valorCota}</p>
+                                    <p><strong>Valor Total Investido:</strong> {selectedAcao.valorTotalInvestido}</p>
+                                    <p><strong>Retorno Diário:</strong> {selectedAcao.retornoDiario}</p>
                                 </div>
-                
                             </>
                         )}
                     </div>
