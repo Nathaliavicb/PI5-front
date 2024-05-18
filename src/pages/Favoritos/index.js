@@ -30,7 +30,7 @@ function Favoritos(){
                     <li key={index}>
                         <span>{acao.acao}</span>
                         <div>
-                            <Link to={`/acao/${index}`}>Detalhes</Link>
+                            <Link to={`/acao/${index}/0`}>Detalhes</Link> 
                             <button onClick={() => excluirAcao(index)} className="buttonExcluir">Excluir</button>
                         </div>
                     </li>

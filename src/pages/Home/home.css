@@ -123,6 +123,10 @@
     margin-top: 35px;
 }
 
+.valorHome {
+    color: #ff3434;;
+}
+
 @media screen and (max-width: 768px) {
     .intro {
         flex-direction: column; 
@@ -161,5 +165,13 @@
 
     .linha-acoes {
         width: calc(50% - 20px); 
+    }
+
+    .botao-acompanhar {
+        padding: 6px 12px;
+    }
+
+    .container-acao-item {
+        margin-left: 5px;
     }
 }

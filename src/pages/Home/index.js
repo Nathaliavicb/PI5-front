@@ -46,9 +46,11 @@ function Home() {
                             {historico.acoes.map((acao, acaoIndex) => (
                                 <div className="acao-item" key={acaoIndex}>
                                     <h3>{acao.acao}</h3>
-                                    <p>Valor da Cota: {acao.valorCota}</p>
-                                    <p>Valor Total Investido: {acao.valorTotalInvestido}</p>
-                                    <p>Retorno Diário: {acao.retornoDiario}%</p>
+                                    <div className="container-acao-item">
+                                        <p><strong>Valor da Cota:</strong> <span className="valorHome">{acao.valorCota}</span></p>
+                                        <p><strong>Valor Total Investido:</strong> <span className="valorHome">{acao.valorTotalInvestido}</span></p>
+                                        <p><strong>Retorno Diário:</strong> <span className="valorHome">{acao.retornoDiario}%</span></p>
+                                    </div>
                                     <Link to={`/acao/${index}/${acaoIndex}`} className="botao-acompanhar">Acompanhar</Link>
                                 </div>
                             ))}

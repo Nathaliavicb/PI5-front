@@ -43,7 +43,27 @@ function RetrospectivaAcoes({ acoesSalvas }) {
             options: {
                 indexAxis: 'y',
                 scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Valor das Ações',
+                            color: 'black',
+                            font: {
+                                weight: 'bold',
+                                size: 16
+                            }
+                        }
+                    },
                     y: {
+                        title: {
+                            display: true,
+                            text: 'Empresas',
+                            color: 'black',
+                            font: {
+                                weight: 'bold',
+                                size: 16
+                            }
+                        },
                         ticks: {
                             font: {
                                 size: 10 

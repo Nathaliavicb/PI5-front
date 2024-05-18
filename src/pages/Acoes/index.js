@@ -124,9 +124,11 @@ function Acoes() {
                             <>
                                 <div className='container-info-acoes'>                
                                     <h3>{selectedAcao.acao}</h3>
-                                    <p><strong>Valor Cota:</strong> {selectedAcao.valorCota}</p>
-                                    <p><strong>Valor Total Investido:</strong> {selectedAcao.valorTotalInvestido}</p>
-                                    <p><strong>Retorno Diário:</strong> {selectedAcao.retornoDiario}</p>
+                                    <div className='container-info-add'>
+                                        <p><strong>Valor Cota:</strong> <span className="valorAcao">{selectedAcao.valorCota}</span></p>
+                                        <p><strong>Valor Total Investido:</strong> <span className="valorAcao">{selectedAcao.valorTotalInvestido}</span></p>
+                                        <p><strong>Retorno Diário:</strong> <span className="valorAcao">{selectedAcao.retornoDiario}%</span></p>
+                                    </div>
                                 </div>
                             </>
                         )}
