@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import './favoritos.css';
 import RetrospectivaAcoes from '../../componentss/Graph/RetrospectivaAcoes';
 
-function Favoritos(){
-
+function Favoritos() {
     const [acoesSalvas, setAcoesSalvas] = useState([]);
 
     useEffect(() => {
@@ -12,7 +11,7 @@ function Favoritos(){
         setAcoesSalvas(JSON.parse(minhaLista) || []);
     }, []);
 
-    function excluirAcao(index){
+    function excluirAcao(index) {
         const novaLista = acoesSalvas.filter((_, i) => i !== index);
         setAcoesSalvas(novaLista);
         localStorage.setItem("@matosflix", JSON.stringify(novaLista));
@@ -39,13 +38,13 @@ function Favoritos(){
             <Link className='buttonEscolher' to="/">Escolher</Link>
 
             <div className='container-grafico'>
+                <h3>Gráficos</h3>
                 <div className="graficoRetro">
                     {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.acao)} />}
                 </div>
             </div>
-        
         </div>
-    )
+    );
 }
 
 export default Favoritos;
