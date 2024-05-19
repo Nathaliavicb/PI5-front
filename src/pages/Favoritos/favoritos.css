@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
 }
 
 .meus-filmes h1 {
@@ -13,11 +13,11 @@
 
 .meus-filmes span {
     font-size: 18px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .meus-filmes ul {
-    width: 80%; 
+    width: 80%;
     padding-left: 0;
 }
 
@@ -35,7 +35,7 @@
 .meus-filmes div {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .meus-filmes div a {
@@ -71,14 +71,26 @@
 
 .container-grafico {
     display: flex;
-    margin: auto;
+    flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-grafico h3 {
+    margin-bottom: 20px; 
+    padding-bottom: 0; 
 }
 
 .graficoRetro {
+    display: flex;
+    position: relative;
     width: 550px;
-    height: 550px;
-    margin: auto;
+    height: 500px;
+    margin: 0; 
+    padding: 0; 
 }
 
 @media screen and (max-width: 600px) {
