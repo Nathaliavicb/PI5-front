@@ -35,10 +35,11 @@ function Favoritos() {
                     </li>
                 ))}
             </ul>
-            <Link className='buttonEscolher' to="/">Escolher</Link>
 
             <div className='container-grafico'>
-                <h3>Gráficos</h3>
+                <h2>Gráficos</h2>
+                {acoesSalvas.length === 0 && <h3 style={{marginTop:'20px'}}>Insira alguma ação para ter gráficos</h3>}
+               
                 <div className="graficoRetro">
                     {acoesSalvas.length > 0 && <RetrospectivaAcoes acoesSalvas={acoesSalvas.map(acao => acao.acao)} />}
                 </div>
