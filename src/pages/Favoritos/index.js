@@ -9,7 +9,7 @@ function Favoritos() {
     useEffect(() => {
         async function fetchAcoesFavoritas() {
             try {
-                const response = await fetch('http://localhost:3001/acoes-favoritas');
+                const response = await fetch('https://localhost:7022/api/Acoes/historico-fechamento');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

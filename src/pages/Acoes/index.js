@@ -16,7 +16,7 @@ function Acoes() {
     useEffect(() => {
         async function fetchAcoes() {
             try {
-                const response = await fetch('http://localhost:3001/acoes');
+                const response = await fetch('https://localhost:7022/api/Acoes/atualizar-dados');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
