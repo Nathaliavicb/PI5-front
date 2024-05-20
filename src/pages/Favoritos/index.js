@@ -7,8 +7,19 @@ function Favoritos() {
     const [acoesSalvas, setAcoesSalvas] = useState([]);
 
     useEffect(() => {
-        const minhaLista = localStorage.getItem("@matosflix");
-        setAcoesSalvas(JSON.parse(minhaLista) || []);
+        async function fetchAcoesFavoritas() {
+            try {
+                const response = await fetch('http://localhost:3001/acoes-favoritas');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setAcoesSalvas(data.acoesFavoritas || []);
+            } catch (error) {
+                console.error('Erro ao buscar ações favoritas:', error);
+            }
+        }
+        fetchAcoesFavoritas();
     }, []);
 
     function excluirAcao(index) {

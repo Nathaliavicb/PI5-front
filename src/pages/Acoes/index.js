@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './acoes.css';
-import acoesData from '../../dados/acoes.json';
 import { Line } from 'react-chartjs-2';
 import { useTable } from 'react-table';
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend } from 'chart.js';
@@ -12,14 +11,28 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Leg
 function Acoes() {
     const { index, acaoIndex } = useParams();
     const [selectedAcao, setSelectedAcao] = useState(null);
+    const [historicoAcoes, setHistoricoAcoes] = useState([]);
 
     useEffect(() => {
-        const acaoSelecionada = acoesData.historicoAcoes[parseInt(index)].acoes[parseInt(acaoIndex)];
-        setSelectedAcao(acaoSelecionada);
+        async function fetchAcoes() {
+            try {
+                const response = await fetch('http://localhost:3001/acoes');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setHistoricoAcoes(data.historicoAcoes);
+                const acaoSelecionada = data.historicoAcoes[parseInt(index)].acoes[parseInt(acaoIndex)];
+                setSelectedAcao(acaoSelecionada);
+            } catch (error) {
+                console.error('Erro ao buscar ações:', error);
+            }
+        }
+        fetchAcoes();
     }, [index, acaoIndex]);
 
-    const labels = acoesData.historicoAcoes.map(historico => historico.data);
-    const precoAtualData = acoesData.historicoAcoes.map(historico => 
+    const labels = historicoAcoes.map(historico => historico.data);
+    const precoAtualData = historicoAcoes.map(historico => 
         historico.acoes.find(acao => acao.acao === selectedAcao?.acao)?.valorCota || null
     ).filter(value => value !== null);
 
@@ -91,7 +104,7 @@ function Acoes() {
         []
     );
 
-    const tableData = acoesData.historicoAcoes.flatMap(historico => historico.acoes)
+    const tableData = historicoAcoes.flatMap(historico => historico.acoes)
         .filter(acao => acao.acao === selectedAcao?.acao);
 
     const tableInstance = useTable({ columns, data: tableData });
@@ -152,22 +165,22 @@ function Acoes() {
                                     prepareRow(row);
                                     return (
                                         <tr {...row.getRowProps()}>
-                                            {row.cells.map(cell => {
-                                                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
-                                            })}
+                                            {row.cells.map(cell => (
+                                                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                            ))}
                                         </tr>
                                     );
                                 })}
                             </tbody>
                         </table>
                     </div>
-                    <div className="areaBtnAcoes">
-                        <button onClick={salvarAcao} className="btnSalvar">Salvar</button>
-                        <Link className="btnVoltar" to={`/`}>Voltar</Link>
+                    <div className='btn-fav'>
+                        <button onClick={salvarAcao}>Salvar Ação</button>
+                        <Link to="/favoritos"><button>Ver Favoritos</button></Link>
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='container-footer'>
                 <Footer />
             </div>
         </>

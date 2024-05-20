@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
-import acoesData from '../../dados/acoes.json';
 import intro from '../../assets/intro.jpg';
 import Footer from '../../componentss/Footer';
 
@@ -10,8 +9,21 @@ function Home() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setHistoricoAcoes(acoesData.historicoAcoes);
-        setLoading(false);
+        async function fetchAcoes() {
+            try {
+                const response = await fetch('http://localhost:3001/acoes');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setHistoricoAcoes(data.historicoAcoes);
+            } catch (error) {
+                console.error('Erro ao buscar ações:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchAcoes();
     }, []);
 
     const handleSaibaMaisClick = () => {
